@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class FramesPage {
     WebDriver driver ;
@@ -24,7 +25,8 @@ public class FramesPage {
 
     public void insertText( String text ){
         switchToFrame();
-        driver.findElement(frameInput).sendKeys(text);
+        WebElement ele = driver.findElement(frameInput) ;
+        ele.sendKeys(text);
         switchToParent();
     }
 

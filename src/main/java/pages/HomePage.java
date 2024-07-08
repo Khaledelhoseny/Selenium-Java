@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage {
     WebDriver driver ;
@@ -13,6 +14,9 @@ public class HomePage {
     private final By dynamicLoadingLink = By.linkText("Dynamic Loading") ;
     private final By dropDownLoadingLink = By.linkText("Dropdown") ;
     private final By jsAleartsLink = By.linkText("JavaScript Alerts") ;
+    private final By hoverLink = By.linkText("Hovers");
+    private final By dragAndDropLink = By.linkText("Drag and Drop");
+
 
     public LoginPage clickOnFormAuthemticationLink(){
         driver.findElement(formAuthemticationLink).click();
@@ -42,6 +46,20 @@ public class HomePage {
         return new JsAlertPage(driver) ;
     }
 
+    public HoverPage clickOnHoverLink(){
+        WebElement element = driver.findElement(hoverLink) ;
+        element.click();
+        return new HoverPage(driver);
+    }
+
+    public DragAndDropPage clickOnDragAndDropLink(){
+        clickOnLink(dragAndDropLink);
+        return new DragAndDropPage(driver) ;
+    }
+
+    public void clickOnLink( By locator ){
+        driver.findElement(locator).click();
+    }
 
 
 }
