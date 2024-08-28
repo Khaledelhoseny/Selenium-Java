@@ -12,9 +12,7 @@ public class DynamicLoadingTests extends BaseTests {
     public void exampleOneTest()  {
         DynamicLoadingPage dynamicLoadingPage = homePage.clickOnDynamicLoadingLink() ;
         ExampleOnePage exampleOnePage = dynamicLoadingPage.clickOneExampleOneLink() ;
-
         exampleOnePage.clickOnStartButton();
-
         String expectedResult = "Hello World!" ;
 //        Thread.sleep(5000);
         String actualResult =  exampleOnePage.getHelloWorldMessage()  ;

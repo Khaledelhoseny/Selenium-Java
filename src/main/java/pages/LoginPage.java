@@ -26,13 +26,4 @@ public class LoginPage {
         return new SecureAreaPage(driver)  ;
     }
 
-
-    private final By validationMessage = By.id("flash") ;
-
-    public String getValidationMessage (){
-        return driver.findElement(validationMessage).getText() ;
-    }
-
-
-
 }

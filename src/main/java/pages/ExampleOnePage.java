@@ -14,25 +14,16 @@ public class ExampleOnePage {
     public ExampleOnePage(WebDriver driver) {
         this.driver = driver ;
     }
-
     private final By startButton = By.cssSelector("#start > button") ;
     private final By helloWorldMessage = By.cssSelector("#finish > h4") ;
     public void clickOnStartButton(){
         driver.findElement(startButton).click();
-
     }
-
     public String getHelloWorldMessage(){
-
         wait = new WebDriverWait(driver , Duration.ofSeconds(20)) ;
         wait.until(ExpectedConditions.visibilityOfElementLocated(helloWorldMessage)) ;
         return  driver.findElement(helloWorldMessage).getText() ;
-
     }
-
-
-
-
 
 
 }

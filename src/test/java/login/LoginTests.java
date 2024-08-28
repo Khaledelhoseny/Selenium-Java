@@ -26,8 +26,8 @@ public class LoginTests extends BaseTests {
         LoginPage loginPage = homePage.clickOnFormAuthemticationLink();
         loginPage.insertUsername("tomsmasdasdith");
         loginPage.insertPassword("SuperSecretPassword!");
-        loginPage.clickOnLoginButton();
-        String actualResult = loginPage.getValidationMessage() ;
+        SecureAreaPage secureAreaPage = loginPage.clickOnLoginButton();
+        String actualResult = secureAreaPage.getValidationMessage() ;
         String expectedResult = "Your username is invalid!" ;
         Assert.assertTrue(actualResult.contains(expectedResult));
     }
@@ -37,8 +37,8 @@ public class LoginTests extends BaseTests {
         LoginPage loginPage = homePage.clickOnFormAuthemticationLink();
         loginPage.insertUsername("tomsmith");
         loginPage.insertPassword("SuperSecretPasdadassword!");
-        loginPage.clickOnLoginButton();
-        String actualResult = loginPage.getValidationMessage() ;
+        SecureAreaPage secureAreaPage = loginPage.clickOnLoginButton();
+        String actualResult = secureAreaPage.getValidationMessage() ;
         String expectedResult = "Your password is invalid!" ;
         Assert.assertTrue(actualResult.contains(expectedResult));
     }
